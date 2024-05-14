@@ -1,0 +1,12 @@
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    img {
+        opacity: 0.5;
+    }
+    img:hover {
+        transform: scale(110%);
+        transition: ease 0.7s;
+    }
+}

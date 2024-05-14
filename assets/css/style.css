@@ -16,11 +16,20 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+header {
+  height: 25vh;
+  overflow: hidden;
+  margin-bottom: 3vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
 h1 {
   width: 100%;
-  font-size: 43px;
+  font-size: 38px;
   font-weight: 400;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
   margin-top: 3vh;
   opacity: 0.9;
 }
@@ -46,14 +55,27 @@ form input[type=text] {
   border-radius: 4px;
 }
 form img {
+  animation: pulse 1.8s infinite;
   height: 36px;
 }
 form img:hover {
+  animation: none;
   transition: ease 0.4s;
   transform: scale(105%);
   cursor: pointer;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
 main {
   height: 80vh;
   display: flex;
@@ -61,8 +83,33 @@ main {
   justify-content: space-between;
 }
 
+.today-info {
+  border: 1px solid red;
+  display: flex;
+  align-self: center;
+  width: 400px;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.today-info > * {
+  flex: 1;
+}
+
+.city-details {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  background: url("./../images/1189.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+}
+
 .city-name {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: light;
   text-transform: uppercase;
 }
@@ -72,7 +119,28 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border: 1px solid red;
   justify-content: center;
   gap: 5vw;
+}
+
+.card {
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  min-width: 200px;
+  min-height: 30vh;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+}
+.socials img {
+  opacity: 0.5;
+}
+.socials img:hover {
+  transform: scale(110%);
+  transition: ease 0.7s;
 }/*# sourceMappingURL=style.css.map */

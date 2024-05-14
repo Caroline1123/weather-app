@@ -5,13 +5,33 @@ main {
     justify-content: space-between;
 }
 
+.today-info {
+    border: 1px solid red;
+    display: flex;
+    align-self: center;
+    width :400px;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: rgba(255,255,255,0.3);
+    >* {
+        flex:1;
+    }
+}
 
-.city-info {
-    // display: none;
+.city-details {
+    display :flex;
+    align-items: flex-end;
+    justify-content:center;
+    height: 100%;
+    background: url("./../images/1189.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
 }
 
 .city-name {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: light;
     text-transform : uppercase;
 }
@@ -21,7 +41,15 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap : wrap;
-    border: 1px solid red;
     justify-content: center;
     gap: 5vw;
+}
+
+.card {
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.3);
+    min-width: 200px;
+    min-height: 30vh;
 }
