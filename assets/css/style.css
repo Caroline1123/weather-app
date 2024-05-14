@@ -18,6 +18,32 @@ body {
   font-size: 16px;
 }
 
+.wave-up, .wave-down {
+  width: 100%;
+  position: absolute;
+  z-index: -10;
+  background-size: cover;
+}
+
+.wave-up {
+  background-image: url("./../images/wave_up.svg");
+  min-height: 45vh;
+  top: 0;
+  background-position: bottom;
+}
+
+.wave-down {
+  background-image: url("./../images/wave_down.svg");
+  background-position: top;
+  bottom: 0;
+  min-height: 40vh;
+}
+@media screen and (max-width: 768px) {
+  .wave-down {
+    min-height: 7%;
+  }
+}
+
 header {
   height: 100%;
   overflow: hidden;
@@ -92,10 +118,25 @@ main {
   align-self: center;
   margin-bottom: 2vh;
   width: 400px;
+  background: url("./../images/anime-style-clouds.jpg");
+  z-index: -2;
   justify-content: center;
+  position: relative;
   border-radius: 25px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  background-color: rgba(255, 255, 255, 0.3);
+}
+.today-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 .today-info > * {
   flex: 1;
@@ -120,11 +161,11 @@ main {
   bottom: 0;
   color: white;
   background-color: #34839d;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .city-name {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: light;
   text-transform: uppercase;
 }
@@ -143,9 +184,28 @@ main {
   border-radius: 25px;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.6);
+  background: url("./../images/anime-style-clouds.jpg");
+  background-size: cover;
   min-width: 200px;
   min-height: 30vh;
+  position: relative;
+  z-index: -2;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .date {

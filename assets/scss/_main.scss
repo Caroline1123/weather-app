@@ -12,10 +12,25 @@ main {
     align-self: center;
     margin-bottom:2vh;
     width : 400px;
+    background: url('./../images/anime-style-clouds.jpg');
+    z-index:-2;
     justify-content: center;
+    position: relative;
     border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    overflow:hidden;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    background-color: rgba(255,255,255,0.3);
+    &::before {
+        content: "";
+        position:absolute;
+        top: 0;
+        right:0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255,255,255,0.4);
+    }
     >* {
         flex:1;
         min-height: 100%;
@@ -39,12 +54,12 @@ main {
         bottom: 0;
         color: white;
         background-color: #34839d;
-        opacity:0.8;
+        opacity:0.9;
     }
 }
 
 .city-name {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: light;
     text-transform : uppercase;
 }
@@ -63,9 +78,26 @@ main {
     border-radius: 25px;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255,255,255,0.6);
+    background: url('./../images/anime-style-clouds.jpg');
+    background-size: cover;
     min-width: 200px;
     min-height: 30vh;
+    position:relative;
+    z-index:-2;
+    overflow:hidden;
+    @include mobile {
+        width: 90%;
+    }
+    &::before {
+        content: "";
+        position:absolute;
+        top: 0;
+        right:0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255,255,255,0.4);
+    }
 }
 
 .date {
@@ -95,5 +127,4 @@ main {
             height:auto;
         }
     }
-    // flex-direction: column;
 }

@@ -1,5 +1,5 @@
 body {
-    // background: radial-gradient(circle at 0.7% 1%, rgb(215, 248, 247) 0%, rgb(52, 168, 188) 100.2%);;
+    // background: radial-gradient(circle at 0.7% 1%, rgb(215, 248, 247) 0%, rgb(52, 168, 188) 100.2%);
     background-size:cover;
     height: 100%;
     min-height: 100vh;
@@ -12,4 +12,28 @@ body {
     font-family: $poppins;
     position: relative;
     font-size: 16px;
+}
+  
+.wave-up, .wave-down  {
+    width: 100%;
+    position: absolute;
+    z-index: -10;
+    background-size: cover;
+}
+
+.wave-up {
+    background-image: url("./../images/wave_up.svg");
+    min-height: 45vh;
+    top:0;
+    background-position: bottom;
+}
+
+.wave-down {
+    background-image: url("./../images/wave_down.svg");
+    background-position: top;    
+    bottom:0;
+    min-height: 40vh;
+    @include mobile {
+        min-height: 7%;
+    }
 }
