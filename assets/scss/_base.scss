@@ -1,0 +1,12 @@
+body {
+    background: radial-gradient(circle at 0.7% 1%, rgb(215, 248, 247) 0%, rgb(52, 168, 188) 100.2%);;
+    background-size:cover;
+    height: 100vh;
+    max-width: 100vw;
+    color: rgba(0,0,0,0.8);
+    display: flex;
+    align-content:center;
+    flex-direction: column;
+    text-align: center;
+    font-family: $poppins;
+}
