@@ -8,5 +8,12 @@
     img:hover {
         transform: scale(110%);
         transition: ease 0.7s;
+        opacity: 1;
     }
+}
+
+footer {
+    position: absolute;
+    bottom:0;
+    width: 100%;
 }
