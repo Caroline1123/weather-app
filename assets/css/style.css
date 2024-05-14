@@ -82,7 +82,7 @@ main {
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  gap: 4vh;
   margin-bottom: 6vh;
 }
 
@@ -90,6 +90,7 @@ main {
   max-width: 90%;
   display: flex;
   align-self: center;
+  margin-bottom: 2vh;
   width: 400px;
   justify-content: center;
   border-radius: 25px;
@@ -100,22 +101,26 @@ main {
   flex: 1;
   min-height: 100%;
 }
+.today-info .date {
+  border-radius: 0 25px 0 0;
+}
 
 .city-details {
   min-height: 100%;
   background: url("./../images/1189.jpg");
   background-size: cover;
   background-position: center;
-  border-radius: 25px;
+  border-radius: 25px 0 0 25px;
   position: relative;
 }
 .city-details p {
   width: 100%;
-  border-radius: 0 0 25px 25px;
+  border-radius: 0 25px;
   position: absolute;
   bottom: 0;
   color: white;
   background-color: #34839d;
+  opacity: 0.8;
 }
 
 .city-name {
@@ -130,7 +135,7 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5vw;
+  gap: 4vw;
 }
 
 .card {
@@ -141,6 +146,38 @@ main {
   background-color: rgba(255, 255, 255, 0.6);
   min-width: 200px;
   min-height: 30vh;
+}
+
+.date {
+  background-color: #34839d;
+  color: white;
+  border-radius: 25px 25px 0 0;
+  padding: 1vh 0;
+}
+
+.weather-icon {
+  height: 80px;
+  width: auto;
+}
+
+.temperature {
+  font-size: 26px;
+}
+
+.additional-info {
+  display: flex;
+  padding: 2vh;
+}
+.additional-info > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.additional-info > * img {
+  width: 25px;
+  height: auto;
 }
 
 .socials {

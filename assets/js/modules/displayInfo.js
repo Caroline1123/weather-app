@@ -1,4 +1,5 @@
 import { formatDate } from "./formatDate.js";
+import { getCityPicture } from "./fetch.js";
 
 const generateCardContent = (obj) => {
   const date = formatDate(obj.dt_txt);
@@ -7,22 +8,29 @@ const generateCardContent = (obj) => {
     weatherIconPath = weatherIconPath.replace("n", "d");
   }
   let content = `
-    <img src="https://openweathermap.org/img/wn/${weatherIconPath}@2x.png">
     <p class="date">${date}</p>
+    <img class="weather-icon" src="https://openweathermap.org/img/wn/${weatherIconPath}@2x.png">
     <p class="temperature">${obj.main.temp.toFixed(1)}° C</p>
-    <p class="humidity"><img src="./assets/images/humidity.svg"> ${
-      obj.main.humidity
-    } %</p>
-    <p class="wind"><img src="./assets/images/wind.svg"> ${
-      obj.wind.speed
-    } km/h</p>
+    <div class="additional-info">
+      <p class="humidity"><img src="./assets/images/humidity.svg"> ${
+        obj.main.humidity
+      } %</p>
+      <p class="wind"><img src="./assets/images/wind.svg"> ${
+        obj.wind.speed
+      } km/h</p>
+    </div>
     `;
   return content;
 };
 
-const showCityInfo = (object) => {
+const showCityInfo = async (object) => {
   const cityDetails = document.querySelector(".city-details");
   const todayForecast = document.querySelector(".today-forecast");
+  const pictureURL = await getCityPicture(object.city.name);
+  console.log(pictureURL);
+  if (pictureURL) {
+    cityDetails.style.backgroundImage = `url(${pictureURL})`;
+  }
   cityDetails.innerHTML = `
   <p class="city"><span class="city-name">${object.city.name}</span>, ${object.city.country}</p>
   `;
