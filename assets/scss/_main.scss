@@ -7,7 +7,7 @@ main {
 }
 
 .today-forecast {
-    background-color:rgb(182, 209, 226,0.5);
+    background-color:rgba(200, 202, 205, 0.5);
 
 }
 
@@ -47,7 +47,7 @@ main {
         position: absolute;
         bottom: 0;
         color: white;
-        background-color: #34839d;
+        background-color: rgba(0,0,0,0.7);
         opacity:0.9;
     }
 }
@@ -72,7 +72,7 @@ main {
     border-radius: 25px;
     align-items: center;
     justify-content: center;
-    background-color: rgb(182, 209, 226,0.5);
+    background-color: rgba(200, 202, 205, 0.5);
     background-size: cover;
     min-width: 200px;
     min-height: 30vh;
@@ -85,7 +85,7 @@ main {
 }
 
 .date {
-    background-color: #34839d;
+    background-color: rgba(0,0,0,0.7);
     color:white;
     border-radius: 25px 25px 0 0 ;
     padding: 1vh 0;
@@ -94,9 +94,19 @@ main {
     height: 80px;
     width: auto; 
 }
-.temperature {
-    font-size: 26px;
+.temperatures {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    .min, .max {
+        display:flex;
+        flex-direction: column;
+        span {
+            font-size: 14px;
+        }
+    }
 }
+
 .additional-info {
     display: flex;
     padding: 2vh;

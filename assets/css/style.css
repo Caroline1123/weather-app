@@ -8,7 +8,7 @@
     background-position: 0% 50%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 50% 100%;
   }
   100% {
     background-position: 0% 50%;
@@ -40,9 +40,9 @@ body {
   text-align: center;
   font-family: "Poppins", sans-serif;
   position: relative;
-  z-index: -10;
+  z-index: -5;
   font-size: 16px;
-  animation: move 60s ease infinite;
+  animation: move 50s ease infinite;
 }
 @media screen and (max-width: 768px) {
   body {
@@ -58,19 +58,20 @@ body::before {
   z-index: -3;
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(200, 200, 200, 0.6);
 }
 
 .wave-up, .wave-down {
   width: 100%;
   position: absolute;
-  z-index: -10;
+  z-index: -2;
+  opacity: 0.5;
   background-size: cover;
 }
 
 .wave-up {
   background-image: url("./../images/wave_up.svg");
-  min-height: 45vh;
+  min-height: 42vh;
   top: 0;
   background-position: bottom;
 }
@@ -103,6 +104,7 @@ h1 {
   margin-bottom: 2vh;
   margin-top: 3vh;
   opacity: 0.9;
+  color: white;
 }
 
 form {
@@ -126,6 +128,7 @@ form input[type=text] {
   border-radius: 4px;
 }
 form img {
+  opacity: 0.7;
   animation: pulse 1.8s infinite;
   height: 36px;
 }
@@ -156,7 +159,7 @@ main {
 }
 
 .today-forecast {
-  background-color: rgba(182, 209, 226, 0.5);
+  background-color: rgba(200, 202, 205, 0.5);
 }
 
 .today-info {
@@ -196,7 +199,7 @@ main {
   position: absolute;
   bottom: 0;
   color: white;
-  background-color: #34839d;
+  background-color: rgba(0, 0, 0, 0.7);
   opacity: 0.9;
 }
 
@@ -220,7 +223,7 @@ main {
   border-radius: 25px;
   align-items: center;
   justify-content: center;
-  background-color: rgba(182, 209, 226, 0.5);
+  background-color: rgba(200, 202, 205, 0.5);
   background-size: cover;
   min-width: 200px;
   min-height: 30vh;
@@ -235,7 +238,7 @@ main {
 }
 
 .date {
-  background-color: #34839d;
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   border-radius: 25px 25px 0 0;
   padding: 1vh 0;
@@ -246,8 +249,17 @@ main {
   width: auto;
 }
 
-.temperature {
-  font-size: 26px;
+.temperatures {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.temperatures .min, .temperatures .max {
+  display: flex;
+  flex-direction: column;
+}
+.temperatures .min span, .temperatures .max span {
+  font-size: 14px;
 }
 
 .additional-info {
@@ -272,7 +284,7 @@ main {
   gap: 3vw;
 }
 .socials img {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 .socials img:hover {
   transform: scale(110%);
