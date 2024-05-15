@@ -3,7 +3,7 @@
     justify-content: center;
     gap: 3vw;
     img {
-        opacity: 0.5;
+        opacity: 0.8;
     }
     img:hover {
         transform: scale(110%);
@@ -16,4 +16,5 @@ footer {
     position: absolute;
     bottom:0;
     width: 100%;
+    margin-bottom: 2vh;
 }
