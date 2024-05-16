@@ -1,5 +1,4 @@
 import { formatDate } from "./formatDate.js";
-import { getCityPicture } from "./fetch.js";
 
 let minMaxTable;
 
@@ -11,10 +10,7 @@ const generateCardContent = (obj) => {
       minMaxObj = item;
     }
   }
-  let weatherIconPath = obj.weather[0].icon;
-  if (weatherIconPath.includes("n")) {
-    weatherIconPath = weatherIconPath.replace("n", "d");
-  }
+  let weatherIconPath = obj.weather[0].icon.replace("n", "d");
   let content = `
     <p class="date">${date}</p>
     <img class="weather-icon" src="https://openweathermap.org/img/wn/${weatherIconPath}@2x.png" alt="weather icon">
@@ -34,12 +30,11 @@ const generateCardContent = (obj) => {
   return content;
 };
 
-const showCityInfo = async (object) => {
+const showCityInfo = async (object, pictureLink) => {
   const cityDetails = document.querySelector(".city-details");
   const todayForecast = document.querySelector(".today-forecast");
-  const pictureURL = await getCityPicture(object.city.name);
-  if (pictureURL !== null) {
-    cityDetails.style.backgroundImage = `url(${pictureURL})`;
+  if (pictureLink !== null) {
+    cityDetails.style.backgroundImage = `url(${pictureLink})`;
   } else {
     cityDetails.style.backgroundImage = `./assets/images/1189.jpg`;
   }

@@ -1,4 +1,4 @@
-import { getForecast } from "./modules/fetch.js";
+import { getForecastAndPicture } from "./modules/fetch.js";
 import { loadCityFromStorage } from "./modules/localStorage.js";
 
 const cityInput = document.querySelector("#cityInput");
@@ -9,18 +9,18 @@ const form = document.querySelector("#search-city");
 const storedCity = loadCityFromStorage();
 if (storedCity) {
   cityInput.value = storedCity;
-  getForecast(storedCity);
+  getForecastAndPicture(storedCity);
 }
 
 // Enables form submission when pressing enter.
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  getForecast(cityInput.value);
+  getForecastAndPicture(cityInput.value);
   cityInput.value = "";
 });
 
 // Enables form submission when clicking search button
 searchButton.addEventListener("click", () => {
-  getForecast(cityInput.value);
+  getForecastAndPicture(cityInput.value);
   cityInput.value = "";
 });
