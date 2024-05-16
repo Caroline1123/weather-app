@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js" type="module"></script>
         <script defer src="assets/js/script.js" type="module"></script>
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="shortcut icon" href="assets/images/favicon1.svg" type="image/x-icon">
@@ -23,7 +24,8 @@
                 <div class="today-forecast"></div>
             </div>
             <div class="cards-container"></div>
-            <div class="graph"></div>
+            <div class="chart"><canvas id="acquisitions"></canvas></div>
+            <div class="wave-down"></div>
         </main>
         <footer>
             <div class="socials">
@@ -31,6 +33,5 @@
                 <a href="https://www.linkedin.com/in/caroline-deconinck-a56b81280/" target="_blank"><img src="assets/images/linkedin.svg" alt="linkedin link"></a>
             </div>
         </footer>
-        <div class="wave-down"></div>
     </body>
 </html>

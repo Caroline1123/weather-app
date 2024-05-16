@@ -87,4 +87,4 @@ const displayMinMaxTemp = (results) => {
   return temperatures;
 };
 
-export { showCityInfo, showForecasts };
+export { showCityInfo, showForecasts, minMaxTable };

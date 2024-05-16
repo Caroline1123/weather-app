@@ -40,7 +40,7 @@ body {
   text-align: center;
   font-family: "Poppins", sans-serif;
   position: relative;
-  z-index: -5;
+  z-index: -10;
   font-size: 16px;
   animation: move 50s ease infinite;
 }
@@ -55,10 +55,10 @@ body::before {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: -3;
+  z-index: -2;
   height: 100%;
   width: 100%;
-  background-color: rgba(200, 200, 200, 0.6);
+  background-color: rgba(200, 200, 200, 0.7);
 }
 
 .wave-up, .wave-down {
@@ -276,6 +276,13 @@ main {
 .additional-info > * img {
   width: 25px;
   height: auto;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  margin-bottom: 5vh;
 }
 
 .socials {

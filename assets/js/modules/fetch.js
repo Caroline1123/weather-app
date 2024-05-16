@@ -1,5 +1,6 @@
 import { showCityInfo, showForecasts } from "./displayInfo.js";
 import { saveCityToStorage } from "./localStorage.js";
+import { showChart } from "./showChart.js";
 
 const apiKey = "7b6a94519bbfa94e096e6593cd078294";
 const apiKeyUnsplash = "RDmr-POInrf2jgsHSndSbYqsflqxkif4MRbWvl-fTmI";
@@ -18,6 +19,7 @@ const getForecast = async (city) => {
     }
     saveCityToStorage(city);
     showCityInfo(result);
+    showChart(result);
     showForecasts(result.list);
   } catch (error) {
     console.log(error);
