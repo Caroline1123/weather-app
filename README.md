@@ -14,7 +14,7 @@ A solo project aiming to build a weather application.
 
 ## Demo
 
-[Github Page]("https://caroline1123.github.io/weather-app/")
+[Github Page](https://caroline1123.github.io/weather-app/)
 
 ## Technologies
 
@@ -23,10 +23,10 @@ A solo project aiming to build a weather application.
   
 <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/HTML.svg" alt="HTML5" height="50" style="max-width: 100%;">
 
-<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/JavaScript.svg" alt="JavaScript" height="40" style="max-width: 100%;">
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/JavaScript.svg" alt="JavaScript" height="50" style="max-width: 100%;">
 </div>
 
 ## API
 
-[Open Weather API]("https://openweathermap.org/api")
-[Unsplash API]("https://unsplash.com/developers")
+[Open Weather API](https://openweathermap.org/api)
+[Unsplash API](https://unsplash.com/developers)
