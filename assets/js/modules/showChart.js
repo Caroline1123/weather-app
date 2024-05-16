@@ -1,5 +1,13 @@
 const showChart = async (results) => {
+  const chartArea = document.querySelector(".chart");
+  chartArea.style.display = "flex";
+
   results = results.list;
+  // Deletes any existing instance of Chart
+  let existingChart = Chart.getChart("acquisitions");
+  if (existingChart) {
+    existingChart.destroy();
+  }
   const timestamps = results.map((entry) => {
     const date = new Date(entry.dt_txt);
     return date.toLocaleString("en-UK", {

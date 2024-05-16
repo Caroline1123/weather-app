@@ -10,20 +10,17 @@ const storedCity = loadCityFromStorage();
 if (storedCity) {
   cityInput.value = storedCity;
   getForecast(storedCity);
-  // location.reload();
 }
 
 // Enables form submission when pressing enter.
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   getForecast(cityInput.value);
-  // cityInput.value = "";
-  // location.reload();
+  cityInput.value = "";
 });
 
 // Enables form submission when clicking search button
 searchButton.addEventListener("click", () => {
   getForecast(cityInput.value);
-  // cityInput.value = "";
-  // location.reload();
+  cityInput.value = "";
 });

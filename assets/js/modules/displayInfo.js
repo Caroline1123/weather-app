@@ -17,16 +17,16 @@ const generateCardContent = (obj) => {
   }
   let content = `
     <p class="date">${date}</p>
-    <img class="weather-icon" src="https://openweathermap.org/img/wn/${weatherIconPath}@2x.png">
+    <img class="weather-icon" src="https://openweathermap.org/img/wn/${weatherIconPath}@2x.png" alt="weather icon">
     <p class="temperatures">
     <span class="min"><span>Min</span>${minMaxObj.min.toFixed(1)}° C</span>
     <span class="max"><span>Max</span>${minMaxObj.max.toFixed(1)}° C</span>
     </p>
     <div class="additional-info">
-      <p class="humidity"><img src="./assets/images/humidity.svg"> ${
+      <p class="humidity"><img src="./assets/images/humidity.svg" alt="humidity"> ${
         obj.main.humidity
       } %</p>
-      <p class="wind"><img src="./assets/images/wind.svg"> ${
+      <p class="wind"><img src="./assets/images/wind.svg" alt="wind"> ${
         obj.wind.speed
       } m/s</p>
     </div>

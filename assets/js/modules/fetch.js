@@ -11,6 +11,7 @@ const getForecast = async (city) => {
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
     );
     if (!response.ok) {
+      alert("Oops! No city of that name was found");
       throw new Error("Failed to fetch data");
     }
     const result = await response.json();
@@ -19,8 +20,8 @@ const getForecast = async (city) => {
     }
     saveCityToStorage(city);
     showCityInfo(result);
-    showChart(result);
     showForecasts(result.list);
+    showChart(result);
   } catch (error) {
     console.log(error);
   }
@@ -31,9 +32,6 @@ const getCityPicture = async (city) => {
     const response = await fetch(
       `https://api.unsplash.com/search/photos?query=${city}&client_id=${apiKeyUnsplash}`
     );
-    if (!response.ok) {
-      throw new Error("Failed to fetch picture data");
-    }
     const result = await response.json();
     if (result.results[0].urls.small) {
       return result.results[0].urls.small;
