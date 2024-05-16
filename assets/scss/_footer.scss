@@ -13,8 +13,12 @@
 }
 
 footer {
+    display:flex;
+    align-items: flex-end;
+    justify-content: center;
     position: absolute;
     bottom:0;
     width: 100%;
-    margin-bottom: 2vh;
+    padding: 3vh 0;
+    background-color: rgba(0,0,0,0.6);
 }

@@ -33,13 +33,14 @@ const getCityPicture = async (city) => {
       `https://api.unsplash.com/search/photos?query=${city}&client_id=${apiKeyUnsplash}`
     );
     const result = await response.json();
-    if (result.results[0].urls.small) {
+    if (result.results.length > 0 && result.results[0].urls.small) {
       return result.results[0].urls.small;
     } else {
-      return false;
+      return null;
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 

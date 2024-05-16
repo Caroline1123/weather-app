@@ -1,7 +1,6 @@
 body {
     background: url("./../images/3d-blue-sky-with-fluffy-white-clouds.jpg");
     background-size: 110% 110%;
-    height: 100%;
     min-height: 100vh;
     max-width: 100vw;
     background-repeat: no-repeat;
@@ -19,44 +18,15 @@ body {
         background-size: cover;
         animation: move 400s ease infinite;
     }
+
     &::before {
         content: "";
         position:absolute;
         top: 0;
         right:0;
-        z-index: -2;
+        z-index: -3;
         height: 100%;
         width: 100%;
         background-color: rgba(200,200,200,0.6);
     }
-}
-
-.wave-up, .wave-down  {
-    width: 100%;
-    position: absolute;
-    z-index: -2;
-    opacity: 0.5;
-    background-size: cover;
-}
-
-.wave-up {
-    background-image: url("./../images/wave_up.svg");
-    height: 30vw;
-    max-height: 320px;
-    top:0;
-    background-position: bottom;
-    @include mobile {
-        height: 55vw;
-    }
-}
-
-.wave-down {
-    background-image: url("./../images/wave_down.svg");
-    background-position: top;    
-    bottom:0;
-    max-height: 320px;
-    height: 38vw;
-    // @include mobile {
-    //     height: 7%;
-    // }
 }

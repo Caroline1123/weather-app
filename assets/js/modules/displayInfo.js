@@ -38,7 +38,7 @@ const showCityInfo = async (object) => {
   const cityDetails = document.querySelector(".city-details");
   const todayForecast = document.querySelector(".today-forecast");
   const pictureURL = await getCityPicture(object.city.name);
-  if (pictureURL) {
+  if (pictureURL !== null) {
     cityDetails.style.backgroundImage = `url(${pictureURL})`;
   } else {
     cityDetails.style.backgroundImage = `./assets/images/1189.jpg`;
