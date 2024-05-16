@@ -216,6 +216,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 4vw;
+  margin: 3vh 0;
 }
 
 .card {
@@ -281,8 +282,16 @@ main {
 .chart {
   display: flex;
   justify-content: center;
-  height: 400px;
-  margin-bottom: 5vh;
+  max-height: 400px;
+  margin: 0 5% 50px 5%;
+}
+
+#acquisitions {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid rgb(204, 201, 201);
 }
 
 .socials {

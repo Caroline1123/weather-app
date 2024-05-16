@@ -1,5 +1,3 @@
-import { formatDate } from "./formatDate.js";
-
 const showChart = async (results) => {
   results = results.list;
   const timestamps = results.map((entry) => {
@@ -32,6 +30,13 @@ const showChart = async (results) => {
       scales: {
         x: {
           type: "category",
+          title: {
+            display: true,
+            text: "Timeline",
+          },
+          ticks: {
+            display: false,
+          },
         },
         y: {
           title: {
@@ -41,7 +46,6 @@ const showChart = async (results) => {
         },
       },
     },
-    backgroundColor: "white",
   });
 };
 
