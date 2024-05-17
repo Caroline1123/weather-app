@@ -44,7 +44,7 @@ const getCityPictureFromResponse = (response) => {
   if (response.results.length > 0 && response.results[0].urls.small) {
     return response.results[0].urls.small;
   } else {
-    return null;
+    return "./assets/images/1189.jpg";
   }
 };
 
