@@ -58,7 +58,7 @@ const showForecasts = (results) => {
   }
 };
 
-// Returns a table of objects of days with min and max temperatures
+// Returns a table of objects with min and max temperatures for each day
 const displayMinMaxTemp = (results) => {
   let currentDay = formatDate(results[0].dt_txt);
   let temperatures = [];

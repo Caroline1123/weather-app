@@ -8,14 +8,12 @@ main {
 
 .today-forecast {
     background-color:rgba(200, 202, 205, 0.5);
-
 }
 
 .today-info {
     max-width: 90%;
     display: flex;
     align-self: center;
-    margin-bottom:2vh;
     width : 400px;
     z-index:-2;
     justify-content: center;
@@ -39,7 +37,7 @@ main {
     background: url("./../images/1189.jpg");
     background-size: cover;
     background-position: center;
-    border-radius: 25px  0 0 25px;
+    border-radius: 25px 0 0 25px;
     position: relative;
     p {
         width : 100%;
@@ -65,7 +63,7 @@ main {
     flex-wrap : wrap;
     justify-content: center;
     gap: 4vw;
-    margin: 3vh 0;
+    margin: 2vh 0;
 }
 
 .card {

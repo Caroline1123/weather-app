@@ -12,12 +12,12 @@ const getForecastAndPicture = async (city) => {
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
       ),
       fetch(
-        `https://api.unsplash.com/search/photos?query=${city}&client_id=${apiKeyUnsplash}`
+        `https://api.unsplash.com/search/photos?query=${city}&page=1&client_id=${apiKeyUnsplash}`
       ),
     ]);
 
     if (!forecastResponse.ok) {
-      alert("Oops! No city of that name was found");
+      alert("Oops! No city with that name was found");
       throw new Error("Failed to fetch forecast data");
     }
 
@@ -28,8 +28,8 @@ const getForecastAndPicture = async (city) => {
           "Unknown error occurred while fetching forecast data"
       );
     }
-
     const pictureResult = await pictureResponse.json();
+    console.log(pictureResult);
     const pictureURL = getCityPictureFromResponse(pictureResult);
     saveCityToStorage(city);
     showForecasts(forecastResult.list);
