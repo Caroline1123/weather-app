@@ -8,13 +8,14 @@ const generateCardContent = (obj) => {
   for (let item of minMaxTable) {
     if (item.day === date) {
       minMaxObj = item;
+      break;
     }
   }
   let weatherIconPath = obj.weather[0].icon.replace("n", "d");
   let content = `
-    <p class="date">${date}</p>
-    <img class="weather-icon" src="https://openweathermap.org/img/wn/${weatherIconPath}@2x.png" alt="weather icon">
-    <p class="temperatures">
+  <p class="date">${date}</p>
+  <img class="weather-icon" src="https://openweathermap.org/img/wn/${weatherIconPath}@2x.png" alt="weather icon">
+  <p class="temperatures">
     <span class="min"><span>Min</span>${minMaxObj.min.toFixed(1)}° C</span>
     <span class="max"><span>Max</span>${minMaxObj.max.toFixed(1)}° C</span>
     </p>
@@ -47,26 +48,24 @@ const showCityInfo = async (object, pictureLink) => {
 const showForecasts = (results) => {
   const cardsContainer = document.querySelector(".cards-container");
   cardsContainer.innerHTML = "";
-  minMaxTable = displayMinMaxTemp(results);
-  let i = 8;
-  while (i < 40) {
+  minMaxTable = getMinMaxTemp(results);
+  for (let i = 8; i < results.length; i = i+8) {
     const newCard = document.createElement("div");
     newCard.classList.add("card");
     newCard.innerHTML = generateCardContent(results[i], minMaxTable);
     cardsContainer.appendChild(newCard);
-    i = i + 8;
   }
 };
 
 // Returns a table of objects with min and max temperatures for each day
-const displayMinMaxTemp = (results) => {
+const getMinMaxTemp = (results) => {
   let currentDay = formatDate(results[0].dt_txt);
   let temperatures = [];
   let temp = [];
   for (let i = 0; i < results.length; i++) {
     let day = new Date(results[i].dt_txt);
     day = formatDate(day);
-    if (currentDay !== day) {
+    if (currentDay !== day || i == results.length -1 ) {
       temperatures.push({
         day: currentDay,
         min: Math.min(...temp),
@@ -74,12 +73,10 @@ const displayMinMaxTemp = (results) => {
       });
       currentDay = day;
       temp = [];
-      temp.push(results[i].main.temp);
-    } else {
-      temp.push(results[i].main.temp);
     }
+    temp.push(results[i].main.temp);
   }
   return temperatures;
 };
 
-export { showCityInfo, showForecasts, minMaxTable };
+export { showCityInfo, showForecasts };

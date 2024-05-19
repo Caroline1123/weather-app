@@ -28,10 +28,15 @@ const getForecastAndPicture = async (city) => {
           "Unknown error occurred while fetching forecast data"
       );
     }
-    const pictureResult = await pictureResponse.json();
-    console.log(pictureResult);
-    const pictureURL = getCityPictureFromResponse(pictureResult);
     saveCityToStorage(city);
+
+    const pictureResult = await pictureResponse.json();
+    let pictureURL = "./assets/images/1189.jpg"
+
+    // Checks if city image was found and replaces it with default picture if not
+    if (pictureResult.results.length > 0 && pictureResult.results[0].urls.small ) {
+      pictureURL = pictureResult.results[0].urls.small
+    }
     showForecasts(forecastResult.list);
     showCityInfo(forecastResult, pictureURL);
     showChart(forecastResult);
@@ -40,12 +45,5 @@ const getForecastAndPicture = async (city) => {
   }
 };
 
-const getCityPictureFromResponse = (response) => {
-  if (response.results.length > 0 && response.results[0].urls.small) {
-    return response.results[0].urls.small;
-  } else {
-    return "./assets/images/1189.jpg";
-  }
-};
 
 export { getForecastAndPicture };

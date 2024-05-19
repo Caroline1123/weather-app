@@ -121,11 +121,10 @@ form img:hover {
 }
 
 main {
-  height: auto;
   display: flex;
   flex-direction: column;
   gap: 4vh;
-  margin-bottom: 6vh;
+  margin-bottom: 15vh;
 }
 
 .today-forecast {
@@ -289,6 +288,8 @@ main {
 
 footer {
   display: flex;
+  position: absolute;
+  bottom: 0;
   align-items: flex-end;
   justify-content: center;
   width: 100%;
