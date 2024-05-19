@@ -35,6 +35,8 @@ const showChart = async (results) => {
       ],
     },
     options: {
+      maintainAspectRatio: false,
+      responsive: true,
       scales: {
         x: {
           type: "category",
