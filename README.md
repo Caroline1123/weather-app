@@ -4,7 +4,7 @@ A solo project aiming to build a weather application.
 
 ## Features
 
-- Displays weather for the 5 upcoming days
+- Displays weather for 5 days
 - Enables city search
 - Latest city searched is saved to local storage and displayed upon loading the page
 - Responsive page
